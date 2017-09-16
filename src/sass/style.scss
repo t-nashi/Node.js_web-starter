@@ -1,0 +1,71 @@
+﻿//FrontNote用のコメント
+/*
+#overview
+Gulp入門サンプル
+サンプルファイルです
+*/
+
+/*
+#styleguide
+サンプル見出し1
+サンプルの見出しスタイル
+hoverすると青く2倍になる
+```
+<h1>見出し1</h1>
+```
+*/
+@charset "utf-8";
+
+/* reset.css */
+@import "_reset";
+
+// sass-mixin(function)
+// @import "./_mixins.scss";
+@import "./_mixins.scss";
+
+/* element */
+.element {
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(red, blue);
+	border: none;
+}
+
+
+.hoge {
+	font-size: 20px;
+	@include max-screen($breakpoint-m) {
+		font-size: 18px;
+	}
+	@include max-screen($breakpoint-s) {
+		font-size: 16px;
+	}
+}
+
+
+/* sass --> css コンバート後も残るコメント */
+h1 {
+	color: red;
+	transition: 200ms ease-out transform;
+	font-size: 16px;
+	padding-bottom: 10px;
+	&:hover {
+		color: blue;
+		transform: translate(10px,0);
+	}
+}
+
+.img-min {
+	width: 400px;
+	height: auto;
+}
+
+
+
+
+
+
+
+
+
+

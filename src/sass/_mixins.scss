@@ -1,0 +1,44 @@
+// sassの変数
+// メディアクエリ
+// $breakpoint-tablet: 980px;
+// $breakpoint-mobile: 640px;
+$breakpoint-s: 340px;
+$breakpoint-m: 768px;
+$breakpoint-l: 1024px;
+$breakpoint-x: 1200px;
+
+// 今まで使ってた設定
+// smaller than 3840（1920x2） … 1920pxディスプレイで全画面表示したとき用（一番大きな設定は style.css内が望ましい）
+// smaller than 1430 … 一番一般的な設定にする
+// smaller than 980 … iPad Mini Retinaの縦サイズが 768x1024 なのでこれに該当
+// smaller than 650 … タブレット ～ スマホ用
+// smaller than 480 … スマホ用
+// smaller than 359 … iPhone5sより一回り大きなGalaxyなんかのディスプレイ w360 に適応させるための設定
+
+
+
+
+@mixin max-screen($break-point) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin min-screen($break-point) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin screen($break-point-min, $break-point-max) {
+  @media screen and (min-width: $break-point-min) and (max-width: $break-point-max) {
+    @content;
+  }
+}
+
+
+
+
+
+
+
